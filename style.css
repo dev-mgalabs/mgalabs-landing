@@ -45,7 +45,11 @@ img { max-width: 100%; }
 }
 .nav-content { display: flex; align-items: center; justify-content: space-between; }
 .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.2rem; }
-.logo-img { height: 36px; width: auto; }
+.logo-img {
+  height: 44px; width: auto;
+  filter: drop-shadow(0 0 1px rgba(0,0,0,0.3));
+}
+.footer-logo { height: 56px; }
 .nav-links { display: flex; list-style: none; gap: 32px; }
 .nav-links a {
   font-size: 0.9rem; font-weight: 500; color: var(--text-muted);
@@ -249,8 +253,7 @@ img { max-width: 100%; }
 }
 .footer-content { text-align: center; }
 .footer-brand { margin-bottom: 24px; }
-.footer-brand .logo-img { height: 32px; vertical-align: middle; margin-right: 8px; }
-.footer-brand .logo-text { font-weight: 700; font-size: 1.1rem; }
+.footer-brand .logo-img { height: 56px; vertical-align: middle; margin-bottom: 12px; }
 .footer-brand p { color: var(--text-muted); margin-top: 8px; font-size: 0.9rem; }
 .footer-links { display: flex; justify-content: center; gap: 32px; margin-bottom: 24px; }
 .footer-links a { color: var(--text-muted); font-size: 0.9rem; transition: color 0.2s; }
