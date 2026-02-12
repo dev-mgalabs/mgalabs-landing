@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MGA Labs | Desenvolvimento de Software</title>
+  <meta name="description" content="MGA Labs - Soluções em desenvolvimento de software sob medida. Transformamos ideias em produtos digitais de alta performance.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-content">
+      <a href="#" class="nav-logo">
+        <img src="logo.png" alt="MGA Labs" class="logo-img">
+        <span class="logo-text">MGA Labs</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Serviços</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#tech">Tecnologias</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">🚀 Software sob medida</div>
+      <h1>Transformamos <span class="gradient-text">ideias</span> em produtos digitais</h1>
+      <p class="hero-subtitle">Desenvolvimento de software com foco em performance, escalabilidade e experiência do usuário.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Fale Conosco</a>
+        <a href="#services" class="btn btn-outline">Nossos Serviços</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Serviços</span>
+        <h2>O que fazemos de melhor</h2>
+        <p>Soluções completas para levar seu negócio ao próximo nível</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">💻</div>
+          <h3>Desenvolvimento Web</h3>
+          <p>Aplicações web modernas, responsivas e de alta performance com as melhores tecnologias do mercado.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>Aplicativos Mobile</h3>
+          <p>Apps nativos e híbridos para iOS e Android, com experiência fluida e design intuitivo.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">☁️</div>
+          <h3>Cloud & DevOps</h3>
+          <p>Infraestrutura escalável, CI/CD, containers e automação para entregas rápidas e confiáveis.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔗</div>
+          <h3>APIs & Integrações</h3>
+          <p>Desenvolvimento de APIs robustas e integração com sistemas existentes, ERPs e plataformas.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3>UI/UX Design</h3>
+          <p>Interfaces bonitas e funcionais, projetadas para converter e encantar seus usuários.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🤖</div>
+          <h3>Automação & IA</h3>
+          <p>Automação de processos e soluções inteligentes com inteligência artificial aplicada ao seu negócio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container about-content">
+      <div class="about-text">
+        <span class="section-tag">Sobre nós</span>
+        <h2>Tecnologia que resolve problemas reais</h2>
+        <p>A MGA Labs é uma empresa de desenvolvimento de software focada em criar soluções digitais que realmente fazem diferença. Combinamos expertise técnica com visão de negócio para entregar produtos que geram resultado.</p>
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Projetos entregues</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">Satisfação</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Suporte</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="code-window">
+          <div class="code-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="code-title">mgalabs.ts</span>
+          </div>
+          <pre class="code-body"><code><span class="kw">const</span> <span class="var">mgalabs</span> = {
+  <span class="key">missão</span>: <span class="str">"Transformar ideias em código"</span>,
+  <span class="key">stack</span>: [<span class="str">"Vue"</span>, <span class="str">"React"</span>, <span class="str">".NET"</span>, <span class="str">"Node"</span>],
+  <span class="key">qualidade</span>: <span class="num">Infinity</span>,
+  <span class="key">café</span>: <span class="bool">true</span>,
+};
+
+<span class="kw">export default</span> mgalabs;</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech -->
+  <section class="tech" id="tech">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Tecnologias</span>
+        <h2>Stack moderna e robusta</h2>
+        <p>Utilizamos as melhores ferramentas para cada desafio</p>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-item">Vue.js</div>
+        <div class="tech-item">React</div>
+        <div class="tech-item">.NET</div>
+        <div class="tech-item">Node.js</div>
+        <div class="tech-item">TypeScript</div>
+        <div class="tech-item">PostgreSQL</div>
+        <div class="tech-item">Docker</div>
+        <div class="tech-item">AWS</div>
+        <div class="tech-item">Azure</div>
+        <div class="tech-item">Kubernetes</div>
+        <div class="tech-item">Python</div>
+        <div class="tech-item">Redis</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Contato</span>
+        <h2>Vamos conversar?</h2>
+        <p>Conte-nos sobre seu projeto e vamos encontrar a melhor solução juntos</p>
+      </div>
+      <div class="contact-content">
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" id="name" placeholder="Seu nome" required>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" placeholder="seu@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Assunto</label>
+            <input type="text" id="subject" placeholder="Como podemos ajudar?">
+          </div>
+          <div class="form-group">
+            <label for="message">Mensagem</label>
+            <textarea id="message" rows="5" placeholder="Descreva seu projeto ou necessidade..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Enviar Mensagem</button>
+        </form>
+        <div class="contact-info">
+          <div class="info-card">
+            <span class="info-icon">📧</span>
+            <h4>E-mail</h4>
+            <p>contato@mgalabs.dev</p>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">📍</span>
+            <h4>Localização</h4>
+            <p>Brasil</p>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">💬</span>
+            <h4>WhatsApp</h4>
+            <p>Fale conosco</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <img src="logo.png" alt="MGA Labs" class="logo-img">
+        <span class="logo-text">MGA Labs</span>
+        <p>Transformando ideias em produtos digitais.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#services">Serviços</a>
+        <a href="#about">Sobre</a>
+        <a href="#tech">Tecnologias</a>
+        <a href="#contact">Contato</a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 MGA Labs. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+      document.querySelector('.nav-toggle').classList.toggle('active');
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { t.scrollIntoView({ behavior: 'smooth' }); toggleMenu(); }
+      });
+    });
+
+    // Form
+    function handleSubmit(e) {
+      e.preventDefault();
+      alert('Mensagem enviada! Entraremos em contato em breve.');
+      e.target.reset();
+    }
+
+    // Animate on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.service-card, .tech-item, .info-card, .stat').forEach(el => {
+      el.classList.add('animate');
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
