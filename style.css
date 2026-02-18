@@ -56,6 +56,15 @@ img { max-width: 100%; }
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--text); }
+.nav-portal-btn {
+  padding: 8px 20px !important;
+  background: var(--accent);
+  border-radius: 8px;
+  color: #fff !important;
+  font-weight: 600 !important;
+  transition: all 0.2s;
+}
+.nav-portal-btn:hover { background: var(--accent-light); transform: translateY(-1px); }
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
 .nav-toggle span {
   display: block; width: 24px; height: 2px; background: var(--text);
