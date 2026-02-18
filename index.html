@@ -164,15 +164,17 @@
         <p>Conte-nos sobre seu projeto e vamos encontrar a melhor solução juntos</p>
       </div>
       <div class="contact-content">
-        <form class="contact-form" onsubmit="handleSubmit(event)">
+        <form class="contact-form" onsubmit="handleSubmit(event)" novalidate>
           <div class="form-row">
             <div class="form-group">
               <label for="name">Nome</label>
-              <input type="text" id="name" placeholder="Seu nome" required>
+              <input type="text" id="name" placeholder="Seu nome">
+              <span class="field-hint"></span>
             </div>
             <div class="form-group">
               <label for="email">E-mail</label>
-              <input type="email" id="email" placeholder="seu@email.com" required>
+              <input type="email" id="email" placeholder="seu@email.com">
+              <span class="field-hint"></span>
             </div>
           </div>
           <div class="form-group">
@@ -181,7 +183,8 @@
           </div>
           <div class="form-group">
             <label for="message">Mensagem</label>
-            <textarea id="message" rows="5" placeholder="Descreva seu projeto ou necessidade..." required></textarea>
+            <textarea id="message" rows="5" placeholder="Descreva seu projeto ou necessidade..."></textarea>
+            <span class="field-hint"></span>
           </div>
           <button type="submit" class="btn btn-primary btn-full">Enviar Mensagem</button>
         </form>
@@ -194,12 +197,12 @@
           <div class="info-card">
             <span class="info-icon">📍</span>
             <h4>Localização</h4>
-            <p>Brasil</p>
+            <p>Montes Claros, MG</p>
           </div>
           <div class="info-card">
             <span class="info-icon">💬</span>
             <h4>WhatsApp</h4>
-            <p>Fale conosco</p>
+            <a href="https://wa.me/5538984247080" class="info-link">(38) 98424-7080</a>
           </div>
         </div>
       </div>
@@ -248,9 +251,46 @@
       });
     });
 
-    // Form
+    // Form validation
+    function validateField(input, message) {
+      const hint = input.parentElement.querySelector('.field-hint');
+      if (!hint) return true;
+      if (!input.value.trim()) {
+        hint.textContent = message;
+        hint.classList.add('error');
+        input.classList.add('input-error');
+        return false;
+      }
+      if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim())) {
+        hint.textContent = 'Informe um e-mail válido';
+        hint.classList.add('error');
+        input.classList.add('input-error');
+        return false;
+      }
+      hint.textContent = '';
+      hint.classList.remove('error');
+      input.classList.remove('input-error');
+      return true;
+    }
+
+    // Clear hint on typing
+    document.querySelectorAll('.contact-form input, .contact-form textarea').forEach(el => {
+      el.addEventListener('input', () => {
+        const hint = el.parentElement.querySelector('.field-hint');
+        if (hint) { hint.textContent = ''; hint.classList.remove('error'); }
+        el.classList.remove('input-error');
+      });
+    });
+
     function handleSubmit(e) {
       e.preventDefault();
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const message = document.getElementById('message');
+      const v1 = validateField(name, 'Informe seu nome');
+      const v2 = validateField(email, 'Informe seu e-mail');
+      const v3 = validateField(message, 'Escreva sua mensagem');
+      if (!v1 || !v2 || !v3) return;
       alert('Mensagem enviada! Entraremos em contato em breve.');
       e.target.reset();
     }

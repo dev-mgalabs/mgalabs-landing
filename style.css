@@ -245,6 +245,13 @@ img { max-width: 100%; }
 .info-icon { font-size: 1.5rem; }
 .info-card h4 { margin: 8px 0 4px; font-size: 1rem; }
 .info-card p { color: var(--text-muted); font-size: 0.9rem; }
+.info-link { color: var(--accent); font-size: 0.9rem; display: block; margin-top: 4px; transition: color 0.2s; }
+.info-link:hover { color: var(--accent-light); }
+
+/* Field hints */
+.field-hint { display: block; font-size: 0.8rem; min-height: 18px; margin-top: 4px; }
+.field-hint.error { color: #e74c3c; }
+.input-error { border-color: #e74c3c !important; }
 
 /* === Footer === */
 .footer {
