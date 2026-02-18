@@ -261,10 +261,10 @@ img { max-width: 100%; }
 
 /* Field hints — Quasar style */
 .field-hint {
-  display: block; font-size: 0.75rem; min-height: 20px; padding-top: 4px;
+  display: block; font-size: 0.7rem; min-height: 16px; padding-top: 2px;
   color: var(--text-muted); transition: color 0.2s;
 }
-.field-hint.error { color: #e74c3c; animation: q-hint-shake 0.3s; }
+.field-hint.error { color: #e74c3c; font-weight: 500; animation: q-hint-shake 0.3s; }
 @keyframes q-hint-shake {
   0%, 100% { transform: translateX(0); }
   25% { transform: translateX(-4px); }
