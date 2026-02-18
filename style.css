@@ -215,23 +215,34 @@ img { max-width: 100%; }
 .contact { padding: 100px 0; }
 .contact-content { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.form-group { margin-bottom: 20px; }
-.form-group label { display: block; font-size: 0.85rem; font-weight: 500; margin-bottom: 8px; }
+.form-group { margin-bottom: 8px; position: relative; }
+.form-group label {
+  display: block; font-size: 0.75rem; font-weight: 500; margin-bottom: 4px;
+  color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+.form-group:focus-within label { color: var(--primary-light); }
+.form-group.has-error label { color: #e74c3c; }
 .form-group input, .form-group textarea {
   width: 100%;
-  padding: 14px 16px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--border);
+  border-radius: 0;
   color: var(--text);
   font-family: inherit;
   font-size: 0.95rem;
-  transition: border-color 0.2s;
+  transition: border-color 0.36s cubic-bezier(0.4, 0, 0.2, 1);
   resize: vertical;
 }
 .form-group input:focus, .form-group textarea:focus {
   outline: none;
-  border-color: var(--primary-light);
+  border-bottom-color: var(--primary-light);
+}
+.form-group.has-error input,
+.form-group.has-error textarea {
+  border-bottom-color: #e74c3c;
 }
 .contact-info { display: flex; flex-direction: column; gap: 20px; }
 .info-card {
@@ -248,10 +259,17 @@ img { max-width: 100%; }
 .info-link { color: var(--accent); font-size: 0.9rem; display: block; margin-top: 4px; transition: color 0.2s; }
 .info-link:hover { color: var(--accent-light); }
 
-/* Field hints */
-.field-hint { display: block; font-size: 0.8rem; min-height: 18px; margin-top: 4px; }
-.field-hint.error { color: #e74c3c; }
-.input-error { border-color: #e74c3c !important; }
+/* Field hints — Quasar style */
+.field-hint {
+  display: block; font-size: 0.75rem; min-height: 20px; padding-top: 4px;
+  color: var(--text-muted); transition: color 0.2s;
+}
+.field-hint.error { color: #e74c3c; animation: q-hint-shake 0.3s; }
+@keyframes q-hint-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
 
 /* === Footer === */
 .footer {
