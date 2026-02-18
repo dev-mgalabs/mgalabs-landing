@@ -294,11 +294,38 @@
       const v4 = validateField(message, 'Campo obrigatório');
       if (!v1 || !v2 || !v3 || !v4) return;
 
-      // Enviar via mailto
-      const body = `Nome: ${name.value}\nE-mail: ${email.value}\nAssunto: ${subject.value}\n\nMensagem:\n${message.value}`;
-      const mailto = `mailto:contato@mgalabs.com.br?subject=${encodeURIComponent(subject.value)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
-      e.target.reset();
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Enviando...';
+
+      fetch('https://formsubmit.co/ajax/contato@mgalabs.com.br', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name: name.value,
+          email: email.value,
+          _subject: subject.value,
+          message: message.value
+        })
+      })
+      .then(r => r.json())
+      .then(data => {
+        if (data.success) {
+          btn.textContent = 'Enviado ✓';
+          btn.style.background = '#1ABC9C';
+          e.target.reset();
+          setTimeout(() => { btn.textContent = 'Enviar Mensagem'; btn.style.background = ''; btn.disabled = false; }, 3000);
+        } else {
+          btn.textContent = 'Erro ao enviar';
+          btn.style.background = '#e74c3c';
+          setTimeout(() => { btn.textContent = 'Enviar Mensagem'; btn.style.background = ''; btn.disabled = false; }, 3000);
+        }
+      })
+      .catch(() => {
+        btn.textContent = 'Erro ao enviar';
+        btn.style.background = '#e74c3c';
+        setTimeout(() => { btn.textContent = 'Enviar Mensagem'; btn.style.background = ''; btn.disabled = false; }, 3000);
+      });
     }
 
     // Animate on scroll

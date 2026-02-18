@@ -216,33 +216,27 @@ img { max-width: 100%; }
 .contact-content { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .form-group { margin-bottom: 8px; position: relative; }
-.form-group label {
-  display: block; font-size: 0.75rem; font-weight: 500; margin-bottom: 4px;
-  color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;
-  transition: color 0.2s;
-}
-.form-group:focus-within label { color: var(--primary-light); }
+.form-group label { display: block; font-size: 0.85rem; font-weight: 500; margin-bottom: 8px; }
 .form-group.has-error label { color: #e74c3c; }
 .form-group input, .form-group textarea {
   width: 100%;
-  padding: 10px 0;
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid var(--border);
-  border-radius: 0;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   color: var(--text);
   font-family: inherit;
   font-size: 0.95rem;
-  transition: border-color 0.36s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 0.2s;
   resize: vertical;
 }
 .form-group input:focus, .form-group textarea:focus {
   outline: none;
-  border-bottom-color: var(--primary-light);
+  border-color: var(--primary-light);
 }
 .form-group.has-error input,
 .form-group.has-error textarea {
-  border-bottom-color: #e74c3c;
+  border-color: #e74c3c;
 }
 .contact-info { display: flex; flex-direction: column; gap: 20px; }
 .info-card {
