@@ -4,338 +4,559 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MGA Labs | Desenvolvimento de Software</title>
-  <meta name="description" content="MGA Labs - Soluções em desenvolvimento de software sob medida. Transformamos ideias em produtos digitais de alta performance.">
+  <meta name="description" content="MGA Labs — Soluções em desenvolvimento de software sob medida. Transformamos ideias em produtos digitais de alta performance.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
-  <!-- Navbar -->
+
+  <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
-    <div class="container nav-content">
+    <div class="nav-container">
       <a href="#" class="nav-logo">
         <img src="logo.png" alt="MGA Labs" class="logo-img">
       </a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-links">
         <li><a href="#services">Serviços</a></li>
         <li><a href="#about">Sobre</a></li>
         <li><a href="#tech">Tecnologias</a></li>
         <li><a href="#contact">Contato</a></li>
-        <li><a href="https://app.mgalabs.com.br" class="nav-portal-btn">Acessar Portal</a></li>
+        <li>
+          <a href="https://app.mgalabs.com.br" class="nav-portal" target="_blank" rel="noopener noreferrer">
+            Acessar Portal
+          </a>
+        </li>
       </ul>
-      <button class="nav-toggle" aria-label="Menu" onclick="toggleMenu()">
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" type="button">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="container hero-content">
-      <div class="hero-badge">🚀 Software sob medida</div>
-      <h1>Transformamos <span class="gradient-text">ideias</span> em produtos digitais</h1>
-      <p class="hero-subtitle">Desenvolvimento de software com foco em performance, escalabilidade e experiência do usuário.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">Fale Conosco</a>
-        <a href="#services" class="btn btn-outline">Nossos Serviços</a>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-dots" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-pulse" aria-hidden="true"></span>
+          Software sob medida &nbsp;·&nbsp; Montes Claros, MG
+        </div>
+        <h1 class="hero-h1">
+          Transformamos<br>
+          <em>ideias</em> em<br>
+          produtos digitais
+        </h1>
+        <p class="hero-sub">
+          Desenvolvimento de software com foco em performance,
+          escalabilidade e experiência que converte.
+        </p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Iniciar projeto</a>
+          <a href="#services" class="btn btn-ghost">
+            Ver servicos
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </a>
+        </div>
       </div>
+
+      <div class="hero-visual">
+        <div class="code-window">
+          <div class="cw-header">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="cw-title">mgalabs.ts</span>
+            <span class="cw-lang">TypeScript</span>
+          </div>
+          <pre class="cw-body"><code><span class="tok-kw">import</span> <span class="tok-punc">{</span> <span class="tok-id">Labs</span> <span class="tok-punc">}</span> <span class="tok-kw">from</span> <span class="tok-str">'@mga/core'</span><span class="tok-punc">;</span>
+
+<span class="tok-kw">const</span> <span class="tok-var">mgalabs</span><span class="tok-punc">:</span> <span class="tok-type">Labs</span> <span class="tok-punc">= {</span>
+  <span class="tok-cc">/** Montes Claros &#x2192; Mundo */</span>
+  <span class="tok-key">missão</span><span class="tok-punc">:</span> <span class="tok-str">"Código que transforma"</span><span class="tok-punc">,</span>
+  <span class="tok-key">stack</span><span class="tok-punc">:</span> <span class="tok-punc">[</span>
+    <span class="tok-str">"Vue"</span><span class="tok-punc">,</span> <span class="tok-str">"React"</span><span class="tok-punc">,</span> <span class="tok-str">".NET"</span><span class="tok-punc">,</span> <span class="tok-str">"Node"</span><span class="tok-punc">,</span>
+  <span class="tok-punc">],</span>
+  <span class="tok-key">qualidade</span><span class="tok-punc">:</span> <span class="tok-num">Infinity</span><span class="tok-punc">,</span>
+  <span class="tok-key">café</span><span class="tok-punc">:</span> <span class="tok-bool">true</span><span class="tok-punc">,</span>
+  <span class="tok-key">projetos</span><span class="tok-punc">:</span> <span class="tok-str">"50+"</span><span class="tok-punc">,</span>
+<span class="tok-punc">};</span>
+
+<span class="tok-kw">export default</span> mgalabs<span class="tok-punc">;</span></code></pre>
+          <div class="cw-statusbar">
+            <span class="cw-status">
+              <span class="status-dot" aria-hidden="true"></span>
+              Pronto para produção
+            </span>
+            <span class="cw-loc">MG &#x2192; &#127760;</span>
+          </div>
+        </div>
+        <div class="hero-badge-float" aria-hidden="true">
+          <span class="hbf-n">98<sup>%</sup></span>
+          <span class="hbf-l">satisfação</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <div class="scroll-rail"><div class="scroll-car"></div></div>
+      <span>scroll</span>
     </div>
   </section>
 
-  <!-- Services -->
+  <!-- SERVICES -->
   <section class="services" id="services">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Serviços</span>
-        <h2>O que fazemos de melhor</h2>
-        <p>Soluções completas para levar seu negócio ao próximo nível</p>
+      <div class="sec-head" data-animate="fade-up">
+        <p class="sec-eyebrow">
+          <span class="num-pill" aria-hidden="true">01</span>
+          Serviços
+        </p>
+        <h2 class="sec-title">O que fazemos <em>de melhor</em></h2>
+        <p class="sec-sub">Soluções completas para levar seu negócio ao próximo nível</p>
       </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">💻</div>
+
+      <div class="svc-grid">
+        <article class="svc-card" data-animate="fade-up" data-delay="0">
+          <span class="svc-n" aria-hidden="true">01</span>
+          <div class="svc-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4M8 10l2 2-2 2M13 14h3"/>
+            </svg>
+          </div>
           <h3>Desenvolvimento Web</h3>
           <p>Aplicações web modernas, responsivas e de alta performance com as melhores tecnologias do mercado.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">📱</div>
+        </article>
+
+        <article class="svc-card" data-animate="fade-up" data-delay="60">
+          <span class="svc-n" aria-hidden="true">02</span>
+          <div class="svc-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
           <h3>Aplicativos Mobile</h3>
           <p>Apps nativos e híbridos para iOS e Android, com experiência fluida e design intuitivo.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">☁️</div>
-          <h3>Cloud & DevOps</h3>
+        </article>
+
+        <article class="svc-card" data-animate="fade-up" data-delay="120">
+          <span class="svc-n" aria-hidden="true">03</span>
+          <div class="svc-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999A5.002 5.002 0 003 15z"/>
+            </svg>
+          </div>
+          <h3>Cloud &amp; DevOps</h3>
           <p>Infraestrutura escalável, CI/CD, containers e automação para entregas rápidas e confiáveis.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🔗</div>
-          <h3>APIs & Integrações</h3>
+        </article>
+
+        <article class="svc-card" data-animate="fade-up" data-delay="180">
+          <span class="svc-n" aria-hidden="true">04</span>
+          <div class="svc-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 9l3 3-3 3M13 15h3"/><rect x="2" y="5" width="20" height="14" rx="2"/>
+            </svg>
+          </div>
+          <h3>APIs &amp; Integracoes</h3>
           <p>Desenvolvimento de APIs robustas e integração com sistemas existentes, ERPs e plataformas.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🎨</div>
+        </article>
+
+        <article class="svc-card" data-animate="fade-up" data-delay="240">
+          <span class="svc-n" aria-hidden="true">05</span>
+          <div class="svc-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 19l7-7 3 3-7 7-3-3zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/>
+            </svg>
+          </div>
           <h3>UI/UX Design</h3>
-          <p>Interfaces bonitas e funcionais, projetadas para converter e encantar seus usuários.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🤖</div>
-          <h3>Automação & IA</h3>
+          <p>Interfaces bonitas e funcionais, projetadas para converter e encantar seus usuarios.</p>
+        </article>
+
+        <article class="svc-card" data-animate="fade-up" data-delay="300">
+          <span class="svc-n" aria-hidden="true">06</span>
+          <div class="svc-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M14.83 9.17l4.24-4.24M4.93 19.07l4.24-4.24" opacity=".5"/>
+            </svg>
+          </div>
+          <h3>Automação &amp; IA</h3>
           <p>Automação de processos e soluções inteligentes com inteligência artificial aplicada ao seu negócio.</p>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- About -->
+  <!-- ABOUT -->
   <section class="about" id="about">
-    <div class="container about-content">
-      <div class="about-text">
-        <span class="section-tag">Sobre nós</span>
-        <h2>Tecnologia que resolve problemas reais</h2>
-        <p>A MGA Labs é uma empresa de desenvolvimento de software focada em criar soluções digitais que realmente fazem diferença. Combinamos expertise técnica com visão de negócio para entregar produtos que geram resultado.</p>
-        <div class="stats">
-          <div class="stat">
-            <span class="stat-number">50+</span>
-            <span class="stat-label">Projetos entregues</span>
+    <div class="about-glow" aria-hidden="true"></div>
+    <div class="container about-grid">
+
+      <div class="about-copy" data-animate="fade-right">
+        <p class="sec-eyebrow sec-eyebrow--light">
+          <span class="num-pill num-pill--teal" aria-hidden="true">02</span>
+          Sobre nós
+        </p>
+        <h2 class="sec-title sec-title--light">
+          Tecnologia que resolve<br><em>problemas reais</em>
+        </h2>
+        <p class="about-p">
+          A MGA Labs e uma empresa de desenvolvimento de software focada em criar soluções digitais que realmente fazem diferença. Combinamos expertise técnica com visão de negócio para entregar produtos que geram resultado.
+        </p>
+        <div class="stats-row">
+          <div class="stat-item" data-animate="fade-up" data-delay="100">
+            <span class="stat-n">50<sup>+</sup></span>
+            <span class="stat-l">Projetos entregues</span>
           </div>
-          <div class="stat">
-            <span class="stat-number">98%</span>
-            <span class="stat-label">Satisfação</span>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item" data-animate="fade-up" data-delay="200">
+            <span class="stat-n">98%</span>
+            <span class="stat-l">Satisfação dos clientes</span>
           </div>
-          <div class="stat">
-            <span class="stat-number">24/7</span>
-            <span class="stat-label">Suporte</span>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item" data-animate="fade-up" data-delay="300">
+            <span class="stat-n">24/7</span>
+            <span class="stat-l">Suporte disponível</span>
           </div>
         </div>
       </div>
-      <div class="about-visual">
-        <div class="code-window">
-          <div class="code-header">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-            <span class="code-title">mgalabs.ts</span>
-          </div>
-          <pre class="code-body"><code><span class="kw">const</span> <span class="var">mgalabs</span> = {
-  <span class="key">missão</span>: <span class="str">"Transformar ideias em código"</span>,
-  <span class="key">stack</span>: [<span class="str">"Vue"</span>, <span class="str">"React"</span>, <span class="str">".NET"</span>, <span class="str">"Node"</span>],
-  <span class="key">qualidade</span>: <span class="num">Infinity</span>,
-  <span class="key">café</span>: <span class="bool">true</span>,
-};
 
-<span class="kw">export default</span> mgalabs;</code></pre>
+      <div class="about-code" data-animate="fade-left" data-delay="150">
+        <div class="code-window">
+          <div class="cw-header">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="cw-title">mgalabs.ts</span>
+            <span class="cw-lang">TypeScript</span>
+          </div>
+          <pre class="cw-body"><code><span class="tok-kw">interface</span> <span class="tok-type">Labs</span> <span class="tok-punc">{</span>
+  <span class="tok-key">missão</span><span class="tok-punc">:</span> <span class="tok-type">string</span><span class="tok-punc">;</span>
+  <span class="tok-key">stack</span><span class="tok-punc">:</span> <span class="tok-type">string</span><span class="tok-punc">[];</span>
+  <span class="tok-key">qualidade</span><span class="tok-punc">:</span> <span class="tok-type">number</span><span class="tok-punc">;</span>
+  <span class="tok-key">café</span><span class="tok-punc">:</span> <span class="tok-type">boolean</span><span class="tok-punc">;</span>
+<span class="tok-punc">}</span>
+
+<span class="tok-kw">const</span> <span class="tok-var">mgalabs</span><span class="tok-punc">:</span> <span class="tok-type">Labs</span> <span class="tok-punc">= {</span>
+  <span class="tok-key">missão</span><span class="tok-punc">:</span> <span class="tok-str">"Código que transforma"</span><span class="tok-punc">,</span>
+  <span class="tok-key">stack</span><span class="tok-punc">:</span> <span class="tok-punc">[</span>
+    <span class="tok-str">"Vue"</span><span class="tok-punc">,</span> <span class="tok-str">"React"</span><span class="tok-punc">,</span> <span class="tok-str">".NET"</span><span class="tok-punc">,</span>
+    <span class="tok-str">"Node"</span><span class="tok-punc">,</span> <span class="tok-str">"TypeScript"</span><span class="tok-punc">,</span>
+  <span class="tok-punc">],</span>
+  <span class="tok-key">qualidade</span><span class="tok-punc">:</span> <span class="tok-num">Infinity</span><span class="tok-punc">,</span>
+  <span class="tok-key">café</span><span class="tok-punc">:</span> <span class="tok-bool">true</span><span class="tok-punc">,</span>
+<span class="tok-punc">};</span>
+
+<span class="tok-kw">export default</span> mgalabs<span class="tok-punc">;</span></code></pre>
+          <div class="cw-statusbar">
+            <span class="cw-status">
+              <span class="status-dot" aria-hidden="true"></span>
+              Pronto para produção
+            </span>
+            <span class="cw-loc">MG &#x2192; &#127760;</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Tech -->
+  <!-- TECH -->
   <section class="tech" id="tech">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Tecnologias</span>
-        <h2>Stack moderna e robusta</h2>
-        <p>Utilizamos as melhores ferramentas para cada desafio</p>
+      <div class="sec-head" data-animate="fade-up">
+        <p class="sec-eyebrow">
+          <span class="num-pill" aria-hidden="true">03</span>
+          Tecnologias
+        </p>
+        <h2 class="sec-title">Stack moderna <em>e robusta</em></h2>
+        <p class="sec-sub">Utilizamos as melhores ferramentas para cada desafio</p>
       </div>
-      <div class="tech-grid">
-        <div class="tech-item">Vue.js</div>
-        <div class="tech-item">React</div>
-        <div class="tech-item">.NET</div>
-        <div class="tech-item">Node.js</div>
-        <div class="tech-item">TypeScript</div>
-        <div class="tech-item">PostgreSQL</div>
-        <div class="tech-item">Docker</div>
-        <div class="tech-item">AWS</div>
-        <div class="tech-item">Azure</div>
-        <div class="tech-item">Kubernetes</div>
-        <div class="tech-item">Python</div>
-        <div class="tech-item">Redis</div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Contact -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Contato</span>
-        <h2>Vamos conversar?</h2>
-        <p>Conte-nos sobre seu projeto e vamos encontrar a melhor solução juntos</p>
-      </div>
-      <div class="contact-content">
-        <form class="contact-form" onsubmit="handleSubmit(event)" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Nome</label>
-              <input type="text" id="name" placeholder="Seu nome">
-              <span class="field-hint"></span>
-            </div>
-            <div class="form-group">
-              <label for="email">E-mail</label>
-              <input type="email" id="email" placeholder="seu@email.com">
-              <span class="field-hint"></span>
-            </div>
+      <div class="tech-groups" data-animate="fade-up" data-delay="100">
+        <div class="tech-group">
+          <p class="tg-label">Frontend</p>
+          <div class="tech-pills">
+            <span class="tech-pill">Vue.js</span>
+            <span class="tech-pill">React</span>
+            <span class="tech-pill">TypeScript</span>
           </div>
-          <div class="form-group">
-            <label for="subject">Assunto</label>
-            <input type="text" id="subject" placeholder="Como podemos ajudar?">
-            <span class="field-hint"></span>
+        </div>
+        <div class="tech-group">
+          <p class="tg-label">Backend</p>
+          <div class="tech-pills">
+            <span class="tech-pill">.NET</span>
+            <span class="tech-pill">Node.js</span>
+            <span class="tech-pill">Python</span>
           </div>
-          <div class="form-group">
-            <label for="message">Mensagem</label>
-            <textarea id="message" rows="5" placeholder="Descreva seu projeto ou necessidade..."></textarea>
-            <span class="field-hint"></span>
+        </div>
+        <div class="tech-group">
+          <p class="tg-label">Cloud &amp; Infra</p>
+          <div class="tech-pills">
+            <span class="tech-pill">AWS</span>
+            <span class="tech-pill">Azure</span>
+            <span class="tech-pill">Docker</span>
+            <span class="tech-pill">Kubernetes</span>
           </div>
-          <button type="submit" class="btn btn-primary btn-full">Enviar Mensagem</button>
-        </form>
-        <div class="contact-info">
-          <div class="info-card">
-            <span class="info-icon">📧</span>
-            <h4>E-mail</h4>
-            <p>contato@mgalabs.com.br</p>
-          </div>
-          <div class="info-card">
-            <span class="info-icon">📍</span>
-            <h4>Localização</h4>
-            <p>Montes Claros, MG</p>
-          </div>
-          <div class="info-card">
-            <span class="info-icon">💬</span>
-            <h4>WhatsApp</h4>
-            <a href="https://wa.me/5538984247080" class="info-link">(38) 98424-7080</a>
+        </div>
+        <div class="tech-group">
+          <p class="tg-label">Dados</p>
+          <div class="tech-pills">
+            <span class="tech-pill">PostgreSQL</span>
+            <span class="tech-pill">Redis</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-brand">
-        <img src="logo.png" alt="MGA Labs" class="logo-img footer-logo">
-        <p>Transformando ideias em produtos digitais.</p>
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="sec-head" data-animate="fade-up">
+        <p class="sec-eyebrow">
+          <span class="num-pill" aria-hidden="true">04</span>
+          Contato
+        </p>
+        <h2 class="sec-title">Vamos <em>conversar?</em></h2>
+        <p class="sec-sub">Conte-nos sobre seu projeto e encontraremos a melhor solução juntos</p>
       </div>
-      <div class="footer-links">
+
+      <div class="contact-grid">
+        <form class="contact-form" id="contact-form" novalidate data-animate="fade-right">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c-name">Nome</label>
+              <input type="text" id="c-name" name="name" placeholder="Seu nome completo" autocomplete="name">
+              <span class="field-hint" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label for="c-email">E-mail</label>
+              <input type="email" id="c-email" name="email" placeholder="seu@email.com" autocomplete="email">
+              <span class="field-hint" aria-live="polite"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="c-subject">Assunto</label>
+            <input type="text" id="c-subject" name="subject" placeholder="Como podemos ajudar?">
+            <span class="field-hint" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label for="c-message">Mensagem</label>
+            <textarea id="c-message" name="message" rows="5" placeholder="Descreva seu projeto ou necessidade..."></textarea>
+            <span class="field-hint" aria-live="polite"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+            Enviar Mensagem
+          </button>
+        </form>
+
+        <div class="contact-info" data-animate="fade-left" data-delay="150">
+          <a class="ci-card" href="mailto:contato@mgalabs.com.br">
+            <div class="ci-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="ci-text">
+              <h4>E-mail</h4>
+              <span>contato@mgalabs.com.br</span>
+            </div>
+          </a>
+
+          <div class="ci-card ci-card--static">
+            <div class="ci-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div class="ci-text">
+              <h4>Localização</h4>
+              <span>Montes Claros, MG · Brasil</span>
+            </div>
+          </div>
+
+          <a class="ci-card" href="https://wa.me/5538984247080" target="_blank" rel="noopener noreferrer">
+            <div class="ci-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+            </div>
+            <div class="ci-text">
+              <h4>WhatsApp</h4>
+              <span>(38) 98424-7080</span>
+            </div>
+          </a>
+
+          <div class="ci-portal">
+            <p>Ja e cliente MGA Labs?</p>
+            <a href="https://app.mgalabs.com.br" class="btn btn-teal btn-full" target="_blank" rel="noopener noreferrer">
+              Acessar Portal do Cliente
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8h10M9 4l4 4-4 4"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="logo.png" alt="MGA Labs" class="footer-logo">
+        <p>Transformando ideias em produtos digitais.</p>
+        <p class="footer-loc">Montes Claros, MG · Brasil</p>
+      </div>
+      <nav class="footer-nav" aria-label="Links do site">
         <a href="#services">Serviços</a>
         <a href="#about">Sobre</a>
         <a href="#tech">Tecnologias</a>
         <a href="#contact">Contato</a>
+      </nav>
+      <nav class="footer-nav" aria-label="Links legais">
         <a href="/termos.html">Termos de Uso</a>
         <a href="/privacidade.html">Privacidade</a>
-      </div>
-      <div class="footer-bottom">
+        <a href="https://app.mgalabs.com.br" target="_blank" rel="noopener noreferrer">Portal do Cliente</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
         <p>&copy; 2026 MGA Labs. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
 
   <script>
-    // Navbar scroll
+    /* ── Navbar scroll ── */
+    const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    /* ── Mobile menu ── */
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      const open = hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open', open);
+      document.body.classList.toggle('menu-open', open);
+      hamburger.setAttribute('aria-expanded', open);
     });
 
-    // Mobile menu
-    function toggleMenu() {
-      document.querySelector('.nav-links').classList.toggle('active');
-      document.querySelector('.nav-toggle').classList.toggle('active');
-    }
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
+    /* ── Smooth scroll + close menu ── */
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
         e.preventDefault();
-        const t = document.querySelector(a.getAttribute('href'));
-        if (t) { t.scrollIntoView({ behavior: 'smooth' }); toggleMenu(); }
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+        document.body.classList.remove('menu-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        target.scrollIntoView({ behavior: 'smooth' });
       });
     });
 
-    // Form validation — Quasar-style
-    function setError(input, message) {
-      const group = input.closest('.form-group');
-      const hint = group.querySelector('.field-hint');
-      if (!hint) return;
-      group.classList.add('has-error');
-      hint.textContent = message;
-      hint.classList.add('error');
+    /* ── Scroll-triggered animations ── */
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el    = entry.target;
+          const delay = parseInt(el.dataset.delay || '0', 10);
+          setTimeout(() => el.classList.add('in-view'), delay);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+
+    /* ── Form validation ── */
+    const form = document.getElementById('contact-form');
+
+    function setError(input, msg) {
+      const g = input.closest('.form-group');
+      const h = g && g.querySelector('.field-hint');
+      if (g) g.classList.add('has-error');
+      if (h) { h.textContent = msg; h.classList.add('error'); }
     }
+
     function clearError(input) {
-      const group = input.closest('.form-group');
-      const hint = group.querySelector('.field-hint');
-      if (!hint) return;
-      group.classList.remove('has-error');
-      hint.textContent = '';
-      hint.classList.remove('error');
+      const g = input.closest('.form-group');
+      const h = g && g.querySelector('.field-hint');
+      if (g) g.classList.remove('has-error');
+      if (h) { h.textContent = ''; h.classList.remove('error'); }
     }
-    function validateField(input, message) {
-      if (!input.value.trim()) { setError(input, message); return false; }
+
+    function validate(input, msg) {
+      if (!input.value.trim()) { setError(input, msg); return false; }
       if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim())) {
         setError(input, 'E-mail inválido'); return false;
       }
       clearError(input); return true;
     }
 
-    // Clear on typing
-    document.querySelectorAll('.contact-form input, .contact-form textarea').forEach(el => {
+    form.querySelectorAll('input, textarea').forEach(el => {
       el.addEventListener('input', () => clearError(el));
     });
 
-    function handleSubmit(e) {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
-      const name = document.getElementById('name');
-      const email = document.getElementById('email');
-      const message = document.getElementById('message');
-      const subject = document.getElementById('subject');
-      const v1 = validateField(name, 'Campo obrigatório');
-      const v2 = validateField(email, 'Campo obrigatório');
-      const v3 = validateField(subject, 'Campo obrigatório');
-      const v4 = validateField(message, 'Campo obrigatório');
-      if (!v1 || !v2 || !v3 || !v4) return;
+      const name    = document.getElementById('c-name');
+      const email   = document.getElementById('c-email');
+      const subject = document.getElementById('c-subject');
+      const message = document.getElementById('c-message');
+      const btn     = document.getElementById('submit-btn');
 
-      const btn = e.target.querySelector('button[type="submit"]');
+      const valid = [
+        validate(name,    'Campo obrigatório'),
+        validate(email,   'Campo obrigatório'),
+        validate(subject, 'Campo obrigatório'),
+        validate(message, 'Campo obrigatório'),
+      ].every(Boolean);
+
+      if (!valid) return;
+
       btn.disabled = true;
       btn.textContent = 'Enviando...';
 
-      fetch('https://formsubmit.co/ajax/31fe1706f8b90170a675cacc398b49b6', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          name: name.value,
-          email: email.value,
-          _subject: subject.value,
-          message: message.value
-        })
-      })
-      .then(r => r.json())
-      .then(data => {
+      try {
+        const res  = await fetch('https://formsubmit.co/ajax/31fe1706f8b90170a675cacc398b49b6', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            name:     name.value,
+            email:    email.value,
+            _subject: subject.value,
+            message:  message.value,
+          }),
+        });
+        const data = await res.json();
         if (data.success) {
-          btn.textContent = 'Enviado ✓';
-          btn.style.background = '#1ABC9C';
-          e.target.reset();
-          setTimeout(() => { btn.textContent = 'Enviar Mensagem'; btn.style.background = ''; btn.disabled = false; }, 3000);
-        } else {
-          btn.textContent = 'Erro ao enviar';
-          btn.style.background = '#e74c3c';
-          setTimeout(() => { btn.textContent = 'Enviar Mensagem'; btn.style.background = ''; btn.disabled = false; }, 3000);
-        }
-      })
-      .catch(() => {
-        btn.textContent = 'Erro ao enviar';
-        btn.style.background = '#e74c3c';
-        setTimeout(() => { btn.textContent = 'Enviar Mensagem'; btn.style.background = ''; btn.disabled = false; }, 3000);
-      });
-    }
-
-    // Animate on scroll
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.service-card, .tech-item, .info-card, .stat').forEach(el => {
-      el.classList.add('animate');
-      observer.observe(el);
+          btn.textContent = 'Mensagem enviada ✓';
+          btn.classList.add('btn-success');
+          form.reset();
+          setTimeout(() => {
+            btn.textContent = 'Enviar Mensagem';
+            btn.classList.remove('btn-success');
+            btn.disabled = false;
+          }, 3500);
+        } else throw new Error('fail');
+      } catch {
+        btn.textContent = 'Erro — tente novamente';
+        btn.classList.add('btn-error');
+        setTimeout(() => {
+          btn.textContent = 'Enviar Mensagem';
+          btn.classList.remove('btn-error');
+          btn.disabled = false;
+        }, 3500);
+      }
     });
   </script>
 </body>
